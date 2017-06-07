@@ -1,0 +1,547 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B3DD783A1EE80E95003F5023 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DD78391EE80E95003F5023 /* AppDelegate.swift */; };
+		B3DD783C1EE80E95003F5023 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DD783B1EE80E95003F5023 /* ViewController.swift */; };
+		B3DD783F1EE80E95003F5023 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3DD783D1EE80E95003F5023 /* Main.storyboard */; };
+		B3DD78411EE80E95003F5023 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3DD78401EE80E95003F5023 /* Assets.xcassets */; };
+		B3DD78441EE80E95003F5023 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3DD78421EE80E95003F5023 /* LaunchScreen.storyboard */; };
+		B3DD784F1EE80E95003F5023 /* SMSBlockerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DD784E1EE80E95003F5023 /* SMSBlockerTests.swift */; };
+		B3DD785A1EE80E95003F5023 /* SMSBlockerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DD78591EE80E95003F5023 /* SMSBlockerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B3DD784B1EE80E95003F5023 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3DD782E1EE80E95003F5023 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3DD78351EE80E95003F5023;
+			remoteInfo = SMSBlocker;
+		};
+		B3DD78561EE80E95003F5023 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3DD782E1EE80E95003F5023 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3DD78351EE80E95003F5023;
+			remoteInfo = SMSBlocker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B3DD78361EE80E95003F5023 /* SMSBlocker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMSBlocker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3DD78391EE80E95003F5023 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B3DD783B1EE80E95003F5023 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B3DD783E1EE80E95003F5023 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B3DD78401EE80E95003F5023 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B3DD78431EE80E95003F5023 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B3DD78451EE80E95003F5023 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3DD784A1EE80E95003F5023 /* SMSBlockerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SMSBlockerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3DD784E1EE80E95003F5023 /* SMSBlockerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSBlockerTests.swift; sourceTree = "<group>"; };
+		B3DD78501EE80E95003F5023 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3DD78551EE80E95003F5023 /* SMSBlockerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SMSBlockerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3DD78591EE80E95003F5023 /* SMSBlockerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSBlockerUITests.swift; sourceTree = "<group>"; };
+		B3DD785B1EE80E95003F5023 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B3DD78331EE80E95003F5023 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3DD78471EE80E95003F5023 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3DD78521EE80E95003F5023 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B3DD782D1EE80E95003F5023 = {
+			isa = PBXGroup;
+			children = (
+				B3DD78381EE80E95003F5023 /* SMSBlocker */,
+				B3DD784D1EE80E95003F5023 /* SMSBlockerTests */,
+				B3DD78581EE80E95003F5023 /* SMSBlockerUITests */,
+				B3DD78371EE80E95003F5023 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B3DD78371EE80E95003F5023 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B3DD78361EE80E95003F5023 /* SMSBlocker.app */,
+				B3DD784A1EE80E95003F5023 /* SMSBlockerTests.xctest */,
+				B3DD78551EE80E95003F5023 /* SMSBlockerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B3DD78381EE80E95003F5023 /* SMSBlocker */ = {
+			isa = PBXGroup;
+			children = (
+				B3DD78391EE80E95003F5023 /* AppDelegate.swift */,
+				B3DD783B1EE80E95003F5023 /* ViewController.swift */,
+				B3DD783D1EE80E95003F5023 /* Main.storyboard */,
+				B3DD78401EE80E95003F5023 /* Assets.xcassets */,
+				B3DD78421EE80E95003F5023 /* LaunchScreen.storyboard */,
+				B3DD78451EE80E95003F5023 /* Info.plist */,
+			);
+			path = SMSBlocker;
+			sourceTree = "<group>";
+		};
+		B3DD784D1EE80E95003F5023 /* SMSBlockerTests */ = {
+			isa = PBXGroup;
+			children = (
+				B3DD784E1EE80E95003F5023 /* SMSBlockerTests.swift */,
+				B3DD78501EE80E95003F5023 /* Info.plist */,
+			);
+			path = SMSBlockerTests;
+			sourceTree = "<group>";
+		};
+		B3DD78581EE80E95003F5023 /* SMSBlockerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B3DD78591EE80E95003F5023 /* SMSBlockerUITests.swift */,
+				B3DD785B1EE80E95003F5023 /* Info.plist */,
+			);
+			path = SMSBlockerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B3DD78351EE80E95003F5023 /* SMSBlocker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3DD785E1EE80E95003F5023 /* Build configuration list for PBXNativeTarget "SMSBlocker" */;
+			buildPhases = (
+				B3DD78321EE80E95003F5023 /* Sources */,
+				B3DD78331EE80E95003F5023 /* Frameworks */,
+				B3DD78341EE80E95003F5023 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SMSBlocker;
+			productName = SMSBlocker;
+			productReference = B3DD78361EE80E95003F5023 /* SMSBlocker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B3DD78491EE80E95003F5023 /* SMSBlockerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3DD78611EE80E95003F5023 /* Build configuration list for PBXNativeTarget "SMSBlockerTests" */;
+			buildPhases = (
+				B3DD78461EE80E95003F5023 /* Sources */,
+				B3DD78471EE80E95003F5023 /* Frameworks */,
+				B3DD78481EE80E95003F5023 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B3DD784C1EE80E95003F5023 /* PBXTargetDependency */,
+			);
+			name = SMSBlockerTests;
+			productName = SMSBlockerTests;
+			productReference = B3DD784A1EE80E95003F5023 /* SMSBlockerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B3DD78541EE80E95003F5023 /* SMSBlockerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3DD78641EE80E95003F5023 /* Build configuration list for PBXNativeTarget "SMSBlockerUITests" */;
+			buildPhases = (
+				B3DD78511EE80E95003F5023 /* Sources */,
+				B3DD78521EE80E95003F5023 /* Frameworks */,
+				B3DD78531EE80E95003F5023 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B3DD78571EE80E95003F5023 /* PBXTargetDependency */,
+			);
+			name = SMSBlockerUITests;
+			productName = SMSBlockerUITests;
+			productReference = B3DD78551EE80E95003F5023 /* SMSBlockerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B3DD782E1EE80E95003F5023 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Liang Zhao";
+				TargetAttributes = {
+					B3DD78351EE80E95003F5023 = {
+						CreatedOnToolsVersion = 9.0;
+					};
+					B3DD78491EE80E95003F5023 = {
+						CreatedOnToolsVersion = 9.0;
+						TestTargetID = B3DD78351EE80E95003F5023;
+					};
+					B3DD78541EE80E95003F5023 = {
+						CreatedOnToolsVersion = 9.0;
+						TestTargetID = B3DD78351EE80E95003F5023;
+					};
+				};
+			};
+			buildConfigurationList = B3DD78311EE80E95003F5023 /* Build configuration list for PBXProject "SMSBlocker" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B3DD782D1EE80E95003F5023;
+			productRefGroup = B3DD78371EE80E95003F5023 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B3DD78351EE80E95003F5023 /* SMSBlocker */,
+				B3DD78491EE80E95003F5023 /* SMSBlockerTests */,
+				B3DD78541EE80E95003F5023 /* SMSBlockerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B3DD78341EE80E95003F5023 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3DD78441EE80E95003F5023 /* LaunchScreen.storyboard in Resources */,
+				B3DD78411EE80E95003F5023 /* Assets.xcassets in Resources */,
+				B3DD783F1EE80E95003F5023 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3DD78481EE80E95003F5023 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3DD78531EE80E95003F5023 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B3DD78321EE80E95003F5023 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3DD783C1EE80E95003F5023 /* ViewController.swift in Sources */,
+				B3DD783A1EE80E95003F5023 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3DD78461EE80E95003F5023 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3DD784F1EE80E95003F5023 /* SMSBlockerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3DD78511EE80E95003F5023 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3DD785A1EE80E95003F5023 /* SMSBlockerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B3DD784C1EE80E95003F5023 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3DD78351EE80E95003F5023 /* SMSBlocker */;
+			targetProxy = B3DD784B1EE80E95003F5023 /* PBXContainerItemProxy */;
+		};
+		B3DD78571EE80E95003F5023 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3DD78351EE80E95003F5023 /* SMSBlocker */;
+			targetProxy = B3DD78561EE80E95003F5023 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B3DD783D1EE80E95003F5023 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3DD783E1EE80E95003F5023 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B3DD78421EE80E95003F5023 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3DD78431EE80E95003F5023 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B3DD785C1EE80E95003F5023 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B3DD785D1EE80E95003F5023 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B3DD785F1EE80E95003F5023 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TNZ7HD8PFQ;
+				INFOPLIST_FILE = SMSBlocker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Amztion.SMSBlocker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B3DD78601EE80E95003F5023 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TNZ7HD8PFQ;
+				INFOPLIST_FILE = SMSBlocker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Amztion.SMSBlocker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B3DD78621EE80E95003F5023 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = TNZ7HD8PFQ;
+				INFOPLIST_FILE = SMSBlockerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Amztion.SMSBlockerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SMSBlocker.app/SMSBlocker";
+			};
+			name = Debug;
+		};
+		B3DD78631EE80E95003F5023 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = TNZ7HD8PFQ;
+				INFOPLIST_FILE = SMSBlockerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Amztion.SMSBlockerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SMSBlocker.app/SMSBlocker";
+			};
+			name = Release;
+		};
+		B3DD78651EE80E95003F5023 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = TNZ7HD8PFQ;
+				INFOPLIST_FILE = SMSBlockerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Amztion.SMSBlockerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SMSBlocker;
+			};
+			name = Debug;
+		};
+		B3DD78661EE80E95003F5023 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = TNZ7HD8PFQ;
+				INFOPLIST_FILE = SMSBlockerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Amztion.SMSBlockerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SMSBlocker;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B3DD78311EE80E95003F5023 /* Build configuration list for PBXProject "SMSBlocker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3DD785C1EE80E95003F5023 /* Debug */,
+				B3DD785D1EE80E95003F5023 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3DD785E1EE80E95003F5023 /* Build configuration list for PBXNativeTarget "SMSBlocker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3DD785F1EE80E95003F5023 /* Debug */,
+				B3DD78601EE80E95003F5023 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B3DD78611EE80E95003F5023 /* Build configuration list for PBXNativeTarget "SMSBlockerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3DD78621EE80E95003F5023 /* Debug */,
+				B3DD78631EE80E95003F5023 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B3DD78641EE80E95003F5023 /* Build configuration list for PBXNativeTarget "SMSBlockerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3DD78651EE80E95003F5023 /* Debug */,
+				B3DD78661EE80E95003F5023 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B3DD782E1EE80E95003F5023 /* Project object */;
+}
