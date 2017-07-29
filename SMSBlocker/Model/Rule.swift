@@ -12,7 +12,11 @@ struct Rule: Codable {
     var senderMatcher: Matcher?
     var messageMatcher: Matcher?
     
-    init(sender: Matcher?, message: Matcher?) {
+    init(sender: Matcher?, message: Matcher?) throws {
+        guard sender != nil || message != nil else {
+            throw RuleError.senderMessageAreAllNil
+        }
+        
         self.senderMatcher = sender
         self.messageMatcher = message
     }
@@ -23,7 +27,7 @@ struct Rule: Codable {
         let senderMatcher = try? container.decode(Matcher.self, forKey: .senderMatcher)
         let messageMatcher = try? container.decode(Matcher.self, forKey: .messageMatcher)
         
-        self.init(sender: senderMatcher, message: messageMatcher)
+        try self.init(sender: senderMatcher, message: messageMatcher)
     }
     
     func encode(to encoder: Encoder) throws {
@@ -117,5 +121,6 @@ extension Rule {
     enum RuleError: Error {
         case senderMatcherIsNil
         case messageMatcherIsNil
+        case senderMessageAreAllNil
     }
 }
