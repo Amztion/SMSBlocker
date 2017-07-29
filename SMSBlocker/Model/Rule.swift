@@ -8,11 +8,40 @@
 
 import Foundation
 
-struct Rule {
-    struct Matcher: StringMatchable {
+struct Rule: Codable {
+    var senderMatcher: Matcher?
+    var messageMatcher: Matcher?
+    
+    init(sender: Matcher?, message: Matcher?) {
+        self.senderMatcher = sender
+        self.messageMatcher = message
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: RuleCodingKeys.self)
+        
+        let senderMatcher = try? container.decode(Matcher.self, forKey: .senderMatcher)
+        let messageMatcher = try? container.decode(Matcher.self, forKey: .messageMatcher)
+        
+        self.init(sender: senderMatcher, message: messageMatcher)
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        
+    }
+}
+
+// MARK: Matcher Sturct
+extension Rule {
+    struct Matcher: Codable {
         enum MatcherType: Int {
             case keyword
             case regex
+        }
+        
+        enum MatcherError: Error {
+            case typeNotValid
+            case matcherNotValid
         }
         
         var type: MatcherType
@@ -22,17 +51,71 @@ struct Rule {
             self.type = type
             self.matcher = matcher
         }
-    
-        func match(_ pattern: String) -> Bool {
-            return self.matcher.match(pattern)
+        
+        init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: MatcherCodingKeys.self)
+            
+            let typeRaw = try? container.decode(Int.self, forKey: .type)
+            let pattern = try? container.decode(String.self, forKey: .matcher)
+            
+            guard typeRaw != nil else {
+                throw MatcherError.typeNotValid
+            }
+            
+            guard pattern != nil else {
+                throw MatcherError.matcherNotValid
+            }
+            
+            if let `typeRaw` =  typeRaw, let `pattern` = pattern {
+                if let type = MatcherType(rawValue: typeRaw) {
+                    var matcherStruct: StringMatchable.Type?
+                    switch type {
+                    case .keyword:
+                        matcherStruct = Keyword.self
+                    case .regex:
+                        matcherStruct = Regex.self
+                    }
+                    
+                    if let matcher = try matcherStruct.self?.init(pattern: pattern) {
+                        self.init(type: type, matcher: matcher)
+                    } else {
+                        throw MatcherError.matcherNotValid
+                    }
+                } else {
+                    throw MatcherError.typeNotValid
+                }
+            } else {
+                throw MatcherError.matcherNotValid
+            }
+        }
+        
+        func encode(to encoder: Encoder) throws {
+            
+        }
+        
+        func match(_ string: String) -> Bool {
+            return matcher.match(string)
         }
     }
+}
+
+// MARK: Codable
+extension Rule {
+    enum RuleCodingKeys: String, CodingKey {
+        case senderMatcher = "senderMatcher"
+        case messageMatcher = "messageMatcher"
+    }
     
-    var senderMatcher: Matcher?
-    var messageMatcher: Matcher?
-    
-    init(sender: Matcher?, message: Matcher?) {
-        self.senderMatcher = sender
-        self.messageMatcher = message
+    enum MatcherCodingKeys: String, CodingKey {
+        case type = "type"
+        case matcher = "matcher"
+    }
+}
+
+// MARK: Error
+extension Rule {
+    enum RuleError: Error {
+        case senderMatcherIsNil
+        case messageMatcherIsNil
     }
 }

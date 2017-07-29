@@ -8,6 +8,7 @@
 
 import Foundation
 
-protocol StringMatchable {
-    func match(_ pattern: String) -> Bool
+protocol StringMatchable: Codable {
+    init(pattern: String) throws
+    func match(_ string: String) -> Bool
 }

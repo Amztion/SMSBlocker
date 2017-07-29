@@ -8,21 +8,45 @@
 
 import Foundation
 
-struct Regex {
+struct Regex: StringMatchable {
     fileprivate let regularExpression: NSRegularExpression
     
-    init?(pattern: String) {
-        if let `regularExpression` = try? NSRegularExpression(pattern: pattern, options: .anchorsMatchLines) {
-            self.regularExpression = regularExpression
-        } else {
-            return nil
+    init(pattern: String) throws {
+        self.regularExpression = try NSRegularExpression(pattern: pattern, options: .anchorsMatchLines)
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try? decoder.container(keyedBy: RegexCodingKey.self)
+        let pattern = try container?.decode(String.self, forKey: .regularExpression)
+        
+        guard pattern != nil else {
+            throw RegexErrorType.patternIsNil
         }
+        
+        try self.init(pattern: pattern!)
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        
+    }
+    
+    func match(_ string: String) -> Bool {
+        return self.regularExpression.matches(in: string, options: .anchored, range: NSRange(location: 0, length: string.characters.count)).count > 0
     }
 }
 
-extension Regex: StringMatchable {
-    func match(_ pattern: String) -> Bool {
-        return self.regularExpression.matches(in: pattern, options: .anchored, range: NSRange(location: 0, length: pattern.characters.count)).count > 0
+// Codable
+extension Regex {
+    enum RegexCodingKey: String, CodingKey {
+        case regularExpression = "regularExpression"
+    }
+}
+
+// Error
+extension Regex {
+    enum RegexErrorType: Error {
+        case patternIsNil
+        case patternIsInvalid
     }
 }
 

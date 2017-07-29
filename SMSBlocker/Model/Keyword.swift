@@ -8,16 +8,14 @@
 
 import Foundation
 
-struct Keyword {
+struct Keyword: StringMatchable {
     var keyword: String
     
-    init(string: String) {
-        keyword = string
+    init(pattern: String) throws {
+        keyword = pattern
     }
-}
-
-extension Keyword: StringMatchable {
-    func match(_ pattern: String) -> Bool {
-        return pattern.contains(keyword)
+    
+    func match(_ string: String) -> Bool {
+        return string.contains(keyword)
     }
 }
