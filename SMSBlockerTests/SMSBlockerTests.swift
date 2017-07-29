@@ -32,5 +32,46 @@ class SMSBlockerTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+}
+
+extension SMSBlockerTests {
+    func testRegexCodableCase() {
+        let regexJson = """
+        {
+            "regularExpression": "[0-9]"
+        }
+        """.data(using: .utf8)!
+        
+        let regex = try? JSONDecoder().decode(Regex.self, from: regexJson)
+        print(regex)
+    }
     
+    func testKeywordCodableCase() {
+        let keywordJson = """
+        {
+            "keyword": "测试"
+        }
+        """.data(using: .utf8)!
+        
+        let keyword = try? JSONDecoder().decode(Keyword.self, from: keywordJson)
+        print(keyword)
+    }
+    
+    func testRuleCodableCase() {
+        let ruleJson = """
+        {
+            "senderMatcher": {
+                "type": 0,
+                "matcher": "测试"
+            },
+            "messageMatcher": {
+                "type": 1,
+                "matcher": "[0-9]"
+            }
+        }
+        """.data(using: .utf8)!
+        
+        let rule = try? JSONDecoder().decode(Rule.self, from: ruleJson)
+        print(rule)
+    }
 }
