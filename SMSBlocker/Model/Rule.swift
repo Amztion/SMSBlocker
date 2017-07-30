@@ -105,7 +105,13 @@ extension Rule {
             var container = encoder.container(keyedBy: CodingKeys.self)
             
             try container.encode(type.rawValue, forKey: .type)
-            try container.encode((matcher as! Regex), forKey: .matcher)
+            
+            switch type {
+            case .keyword:
+                try container.encode((matcher as! Keyword), forKey: .matcher)
+            case .regex:
+                try container.encode(matcher as! Regex, forKey: .matcher)
+            }
         }
         
         func match(_ string: String) -> Bool {
@@ -128,5 +134,21 @@ extension Rule {
         case senderMatcherIsNil
         case messageMatcherIsNil
         case senderMessageAreAllNil
+    }
+}
+
+extension Rule {
+    init(dictionary: [String: Any]) throws {
+        let data = try! JSONSerialization.data(withJSONObject: dictionary, options: .prettyPrinted)
+        let rule = try JSONDecoder().decode(Rule.self, from: data)
+        
+        try self.init(sender: rule.senderMatcher, message: rule.messageMatcher)
+    }
+    
+    func export() throws -> [String: Any] {
+        let data = try JSONEncoder().encode(self)
+        let dictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
+        
+        return dictionary!
     }
 }

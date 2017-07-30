@@ -23,6 +23,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="zmo-vZ-Hde">
                         <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" title="设置" id="Tcj-kh-Boz"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="9hJ-ty-wZI">
                             <rect key="frame" x="133" y="7" width="109" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -31,6 +32,7 @@
                                 <segment title="黑名单"/>
                             </segments>
                         </segmentedControl>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ao1-wQ-d59"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
