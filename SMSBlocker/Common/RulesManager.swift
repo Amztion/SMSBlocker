@@ -29,6 +29,13 @@ fileprivate extension RulesManager {
         self.blackList = try! self.load(forKey: UserDefaultsKey.blackListRules) ?? [Rule]()
     }
     
+    func load(forKey key: String) throws -> [Rule]? {
+        let rulesDictionaries = sharedUserDefaults?.array(forKey: key) as? [[String: Any]]
+        return try rulesDictionaries?.map({ (ruleDictionary) -> Rule in
+            return try Rule(dictionary: ruleDictionary)
+        })
+    }
+    
     func save(_ list: [Rule], forKey key: String) throws {
         let rulesDictionaries = try list.map { (rule) -> [String: Any] in
             return try rule.export()
@@ -36,12 +43,5 @@ fileprivate extension RulesManager {
         
         sharedUserDefaults?.set(rulesDictionaries, forKey: key)
         sharedUserDefaults?.synchronize()
-    }
-    
-    func load(forKey key: String) throws -> [Rule]? {
-        let rulesDictionaries = sharedUserDefaults?.array(forKey: key) as? [[String: Any]]
-        return try rulesDictionaries?.map({ (ruleDictionary) -> Rule in
-            return try Rule(dictionary: ruleDictionary)
-        })
     }
 }

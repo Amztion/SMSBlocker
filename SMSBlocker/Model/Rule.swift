@@ -9,6 +9,8 @@
 import Foundation
 
 struct Rule: Codable {
+    private var identifier: String
+    
     var senderMatcher: Matcher?
     var messageMatcher: Matcher?
     
@@ -17,6 +19,7 @@ struct Rule: Codable {
             throw RuleError.senderMessageAreAllNil
         }
         
+        self.identifier = UUID().uuidString
         self.senderMatcher = sender
         self.messageMatcher = message
     }
@@ -24,15 +27,21 @@ struct Rule: Codable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
+        let identifier = try? container.decode(String.self, forKey: .identifier)
         let senderMatcher = try? container.decode(Matcher.self, forKey: .senderMatcher)
         let messageMatcher = try? container.decode(Matcher.self, forKey: .messageMatcher)
         
         try self.init(sender: senderMatcher, message: messageMatcher)
+        
+        if let `identifier` = identifier {
+            self.identifier = identifier
+        }
     }
     
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         
+        try container.encode(identifier, forKey: .identifier)
         try container.encode(senderMatcher, forKey: .senderMatcher)
         try container.encode(messageMatcher, forKey: .messageMatcher)
     }
@@ -123,6 +132,7 @@ extension Rule {
 // MARK: Codable
 extension Rule {
     enum CodingKeys: String, CodingKey {
+        case identifier = "identifier"
         case senderMatcher = "senderMatcher"
         case messageMatcher = "messageMatcher"
     }
@@ -150,5 +160,11 @@ extension Rule {
         let dictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
         
         return dictionary!
+    }
+}
+
+extension Rule: Equatable {
+    static func ==(lhs: Rule, rhs: Rule) -> Bool {
+        return lhs.identifier == rhs.identifier
     }
 }
