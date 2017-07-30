@@ -22,7 +22,7 @@ struct Rule: Codable {
     }
     
     init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: RuleCodingKeys.self)
+        let container = try decoder.container(keyedBy: CodingKeys.self)
         
         let senderMatcher = try? container.decode(Matcher.self, forKey: .senderMatcher)
         let messageMatcher = try? container.decode(Matcher.self, forKey: .messageMatcher)
@@ -31,7 +31,10 @@ struct Rule: Codable {
     }
     
     func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
         
+        try container.encode(senderMatcher, forKey: .senderMatcher)
+        try container.encode(messageMatcher, forKey: .messageMatcher)
     }
 }
 
@@ -48,6 +51,11 @@ extension Rule {
             case matcherNotValid
         }
         
+        enum CodingKeys: String, CodingKey {
+            case type = "type"
+            case matcher = "matcher"
+        }
+        
         var type: MatcherType
         var matcher: StringMatchable
         
@@ -57,7 +65,7 @@ extension Rule {
         }
         
         init(from decoder: Decoder) throws {
-            let container = try decoder.container(keyedBy: MatcherCodingKeys.self)
+            let container = try decoder.container(keyedBy: CodingKeys.self)
             
             let typeRaw = try? container.decode(Int.self, forKey: .type)
             let pattern = try? container.decode(String.self, forKey: .matcher)
@@ -94,7 +102,10 @@ extension Rule {
         }
         
         func encode(to encoder: Encoder) throws {
+            var container = encoder.container(keyedBy: CodingKeys.self)
             
+            try container.encode(type.rawValue, forKey: .type)
+            try container.encode((matcher as! Regex), forKey: .matcher)
         }
         
         func match(_ string: String) -> Bool {
@@ -105,14 +116,9 @@ extension Rule {
 
 // MARK: Codable
 extension Rule {
-    enum RuleCodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case senderMatcher = "senderMatcher"
         case messageMatcher = "messageMatcher"
-    }
-    
-    enum MatcherCodingKeys: String, CodingKey {
-        case type = "type"
-        case matcher = "matcher"
     }
 }
 

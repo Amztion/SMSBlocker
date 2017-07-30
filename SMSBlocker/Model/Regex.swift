@@ -16,8 +16,8 @@ struct Regex: StringMatchable {
     }
     
     init(from decoder: Decoder) throws {
-        let container = try? decoder.container(keyedBy: RegexCodingKey.self)
-        let pattern = try container?.decode(String.self, forKey: .regularExpression)
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        let pattern = try? container.decode(String.self, forKey: .regularExpression)
         
         guard pattern != nil else {
             throw RegexErrorType.patternIsNil
@@ -27,7 +27,8 @@ struct Regex: StringMatchable {
     }
     
     func encode(to encoder: Encoder) throws {
-        
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(regularExpression.pattern, forKey: .regularExpression)
     }
     
     func match(_ string: String) -> Bool {
@@ -37,7 +38,7 @@ struct Regex: StringMatchable {
 
 // Codable
 extension Regex {
-    enum RegexCodingKey: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case regularExpression = "regularExpression"
     }
 }
