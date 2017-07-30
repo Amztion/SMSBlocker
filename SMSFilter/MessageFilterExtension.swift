@@ -29,12 +29,12 @@ extension MessageFilterExtension: ILMessageFilterQueryHandling {
         
         let action: ILMessageFilterAction!
         
-        let inWhiteList = RulesMatcher.inWhiteList(sender: queryRequest.sender, message: queryRequest.messageBody)
+        let inWhiteList = RulesMatcher().inWhiteList(sender: queryRequest.sender, message: queryRequest.messageBody)
         
         if inWhiteList {
             action = .allow
         } else {
-            let inBlackList = RulesMatcher.inBlackList(sender: queryRequest.sender, message: queryRequest.messageBody)
+            let inBlackList = RulesMatcher().inBlackList(sender: queryRequest.sender, message: queryRequest.messageBody)
             
             if inBlackList {
                 action = .filter
