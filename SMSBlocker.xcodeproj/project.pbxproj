@@ -22,6 +22,7 @@
 		B366E2C71F2B7DFE00D16A28 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B338DD4F1F2B788300AE363C /* Regex.swift */; };
 		B366E2C81F2B7E0100D16A28 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B366E2C31F2B797D00D16A28 /* Protocol.swift */; };
 		B366E2CA1F2B7E0100D16A28 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EB838D1F2B080700534646 /* Constant.swift */; };
+		B37D3C981F2DB84D006264DE /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37D3C971F2DB84D006264DE /* Mock.swift */; };
 		B3DD783A1EE80E95003F5023 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DD78391EE80E95003F5023 /* AppDelegate.swift */; };
 		B3DD783F1EE80E95003F5023 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3DD783D1EE80E95003F5023 /* Main.storyboard */; };
 		B3DD78411EE80E95003F5023 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3DD78401EE80E95003F5023 /* Assets.xcassets */; };
@@ -81,6 +82,7 @@
 		B344AACC1EE80EE900F24099 /* MessageFilterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageFilterExtension.swift; sourceTree = "<group>"; };
 		B344AACE1EE80EE900F24099 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B366E2C31F2B797D00D16A28 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
+		B37D3C971F2DB84D006264DE /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
 		B3CAFAB51EE81BDC00C36B9D /* SMSBlocker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SMSBlocker.entitlements; sourceTree = "<group>"; };
 		B3DD78361EE80E95003F5023 /* SMSBlocker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMSBlocker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3DD78391EE80E95003F5023 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 		B338DD4C1F2B70DE00AE363C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B37D3C971F2DB84D006264DE /* Mock.swift */,
 				B366E2C31F2B797D00D16A28 /* Protocol.swift */,
 				B338DD451F2B700A00AE363C /* RulesManager.swift */,
 				B3EB838D1F2B080700534646 /* Constant.swift */,
@@ -405,6 +408,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3EB838E1F2B080700534646 /* Constant.swift in Sources */,
+				B37D3C981F2DB84D006264DE /* Mock.swift in Sources */,
 				B338DD4E1F2B77FA00AE363C /* Rule.swift in Sources */,
 				B338DD481F2B70B500AE363C /* RulesManageViewController.swift in Sources */,
 				B338DD501F2B788300AE363C /* Regex.swift in Sources */,

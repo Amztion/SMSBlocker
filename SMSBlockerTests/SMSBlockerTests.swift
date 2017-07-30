@@ -10,6 +10,8 @@ import XCTest
 @testable import SMSBlocker
 
 class SMSBlockerTests: XCTestCase {
+    fileprivate let sharedUserDefaults = UserDefaults(suiteName: Domain.group)
+    var sharedRule: Rule?
     
     override func setUp() {
         super.setUp()
@@ -35,6 +37,11 @@ class SMSBlockerTests: XCTestCase {
 }
 
 extension SMSBlockerTests {
+    struct Request {
+        var sender: String?
+        var message: String?
+    }
+    
     func testRegexCodableCase() {
         let regexJson = """
         {
@@ -73,5 +80,56 @@ extension SMSBlockerTests {
         
         let rule = try? JSONDecoder().decode(Rule.self, from: ruleJson)
         print(rule)
+    }
+    
+    func testDictionaryToRuleCase() {
+        let dict = [
+            "senderMatcher": [
+                "type": 0,
+                "matcher": "测试"
+            ],
+            
+            "messageMatcher": [
+                "type": 1,
+                "matcher": "[0-9]"
+            ]
+        ]
+        
+        sharedRule = try! Rule(dictionary: dict)
+        
+        print(sharedRule)
+    }
+    
+    func testRuleToDictionaryCase() {
+        testDictionaryToRuleCase()
+        
+        let dict = try! sharedRule?.export()
+        
+        print(dict)
+    }
+    
+    
+    func testMatch() {
+        sharedUserDefaults?.set(Mock.data, forKey: UserDefaultsKey.blackListRules)
+        
+        var allow = false
+        
+        let request = Request(sender: "13261663073", message: "测试")
+        
+        let inWhiteList = RulesMatcherTester().inWhiteList(sender: request.sender, message: request.message)
+        
+        if inWhiteList {
+            allow = true
+        } else {
+            let inBlackList = RulesMatcherTester().inBlackList(sender: request.sender, message: request.message)
+            
+            if inBlackList {
+                allow = false
+            } else {
+                allow = true
+            }
+        }
+        
+        print(allow)
     }
 }
