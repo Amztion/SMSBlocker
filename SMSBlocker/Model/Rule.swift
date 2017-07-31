@@ -10,38 +10,46 @@ import Foundation
 
 struct Rule: Codable {
     private var identifier: String
+    var title: String
+    var enable: Bool
     
     var senderMatcher: Matcher?
     var messageMatcher: Matcher?
     
-    init(sender: Matcher?, message: Matcher?) throws {
+    private init(title: String, enable: Bool, sender: Matcher?, message: Matcher?, identifier: String = UUID().uuidString) throws {
         guard sender != nil || message != nil else {
             throw RuleError.senderMessageAreAllNil
         }
         
-        self.identifier = UUID().uuidString
+        self.identifier = identifier
+        self.title = title
+        self.enable = enable
         self.senderMatcher = sender
         self.messageMatcher = message
+    }
+    
+    init(title: String, enable: Bool, sender: Matcher?, message: Matcher?) throws {
+        try self.init(title: title, enable: enable, sender: sender, message: message)
     }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        let identifier = try? container.decode(String.self, forKey: .identifier)
+        let identifier = try container.decode(String.self, forKey: .identifier)
+        let title = try container.decode(String.self, forKey: .title)
+        let enable = try container.decode(Bool.self, forKey: .enable)
         let senderMatcher = try? container.decode(Matcher.self, forKey: .senderMatcher)
         let messageMatcher = try? container.decode(Matcher.self, forKey: .messageMatcher)
         
-        try self.init(sender: senderMatcher, message: messageMatcher)
-        
-        if let `identifier` = identifier {
-            self.identifier = identifier
-        }
+        try self.init(title: title, enable: enable, sender: senderMatcher, message: messageMatcher, identifier: identifier)
     }
     
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         
         try container.encode(identifier, forKey: .identifier)
+        try container.encode(title, forKey: .title)
+        try container.encode(enable, forKey: .enable)
         try container.encode(senderMatcher, forKey: .senderMatcher)
         try container.encode(messageMatcher, forKey: .messageMatcher)
     }
@@ -133,6 +141,8 @@ extension Rule {
 extension Rule {
     enum CodingKeys: String, CodingKey {
         case identifier = "identifier"
+        case title = "title"
+        case enable = "enable"
         case senderMatcher = "senderMatcher"
         case messageMatcher = "messageMatcher"
     }
@@ -152,7 +162,7 @@ extension Rule {
         let data = try! JSONSerialization.data(withJSONObject: dictionary, options: .prettyPrinted)
         let rule = try JSONDecoder().decode(Rule.self, from: data)
         
-        try self.init(sender: rule.senderMatcher, message: rule.messageMatcher)
+        try self.init(title: rule.title, enable: rule.enable, sender: rule.senderMatcher, message: rule.messageMatcher, identifier: rule.identifier)
     }
     
     func export() throws -> [String: Any] {
