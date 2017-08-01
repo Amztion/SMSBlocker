@@ -23,23 +23,66 @@ final class RulesManager {
     }
 }
 
+extension RulesManager {
+    enum RuleType {
+        case whiteList
+        case blackList
+    }
+    
+    enum RuleManagerError: Error {
+        
+    }
+}
+
+extension RulesManager {
+    func add(_ rule: Rule, to type: RuleType) throws {
+        switch type {
+        case .whiteList:
+            whiteList.insert(rule, at: 0)
+            try save(whiteList, forKey: UserDefaultsKey.whiteListRules)
+        case .blackList:
+            blackList.insert(rule, at: 0)
+            try save(whiteList, forKey: UserDefaultsKey.whiteListRules)
+        }
+    }
+    
+    func remove(_ rule: Rule, from type: RuleType) throws {
+        switch type {
+        case .whiteList:
+            whiteList = whiteList.filter {!($0 == rule)}
+            try save(whiteList, forKey: UserDefaultsKey.whiteListRules)
+        case .blackList:
+            blackList = blackList.filter {!($0 == rule)}
+            try save(whiteList, forKey: UserDefaultsKey.whiteListRules)
+        }
+    }
+    
+    func modify(_ rule: Rule, by modifiedRule: Rule, in type: RuleType) throws {
+        try remove(rule, from: type)
+        try add(rule, to: type)
+        
+        switch type {
+        case .whiteList:
+            try save(whiteList, forKey: UserDefaultsKey.whiteListRules)
+        case .blackList:
+            try save(whiteList, forKey: UserDefaultsKey.whiteListRules)
+        }
+    }
+}
+
 fileprivate extension RulesManager {
     func loadRules() {
-        self.whiteList = try! self.load(forKey: UserDefaultsKey.whiteListRules) ?? [Rule]()
-        self.blackList = try! self.load(forKey: UserDefaultsKey.blackListRules) ?? [Rule]()
+        whiteList = try! load(forKey: UserDefaultsKey.whiteListRules) ?? [Rule]()
+        blackList = try! load(forKey: UserDefaultsKey.blackListRules) ?? [Rule]()
     }
     
     func load(forKey key: String) throws -> [Rule]? {
         let rulesDictionaries = sharedUserDefaults?.array(forKey: key) as? [[String: Any]]
-        return try rulesDictionaries?.map({ (ruleDictionary) -> Rule in
-            return try Rule(dictionary: ruleDictionary)
-        })
+        return try rulesDictionaries?.map {try Rule(dictionary: $0)}
     }
     
     func save(_ list: [Rule], forKey key: String) throws {
-        let rulesDictionaries = try list.map { (rule) -> [String: Any] in
-            return try rule.export()
-        }
+        let rulesDictionaries = try list.map {try $0.export()}
         
         sharedUserDefaults?.set(rulesDictionaries, forKey: key)
         sharedUserDefaults?.synchronize()
