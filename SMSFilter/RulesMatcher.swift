@@ -24,9 +24,7 @@ struct RulesMatcher {
 extension RulesMatcher {
     func inWhiteList(sender: String?, message: String?) -> Bool {
         if let `whiteList` = self.whiteList {
-            return whiteList.filter({ (rule) -> Bool in
-                return isMatch(matcher: rule.senderMatcher, string: sender) || isMatch(matcher: rule.messageMatcher, string: message)
-            }).count > 0
+            return whiteList.filter {isMatch(matcher: $0.senderMatcher, string: sender) || isMatch(matcher: $0.messageMatcher, string: message)}.count > 0
         } else {
             return false
         }
@@ -34,9 +32,7 @@ extension RulesMatcher {
     
     func inBlackList(sender: String?, message: String?) -> Bool {
         if let `blackList` = self.blackList {
-            return blackList.filter({ (rule) -> Bool in
-                return isMatch(matcher: rule.senderMatcher, string: sender) || isMatch(matcher: rule.messageMatcher, string: message)
-            }).count > 0
+            return blackList.filter {isMatch(matcher: $0.senderMatcher, string: sender) || isMatch(matcher: $0.messageMatcher, string: message)}.count > 0
         } else {
             return false
         }
@@ -44,9 +40,7 @@ extension RulesMatcher {
     
     func load(forKey key: String) throws -> [Rule]? {
         let rulesDictionaries = sharedUserDefaults?.array(forKey: key) as? [[String: Any]]
-        return try rulesDictionaries?.map({ (ruleDictionary) -> Rule in
-            return try Rule(dictionary: ruleDictionary)
-        })
+        return try rulesDictionaries?.map {try Rule(dictionary: $0)}
     }
     
     func isMatch(matcher: Rule.Matcher?, string: String?) -> Bool {

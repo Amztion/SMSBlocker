@@ -12,7 +12,7 @@ struct Regex: StringMatchable {
     fileprivate let regularExpression: NSRegularExpression
     
     init(pattern: String) throws {
-        self.regularExpression = try NSRegularExpression(pattern: pattern, options: .anchorsMatchLines)
+        regularExpression = try NSRegularExpression(pattern: pattern, options: .anchorsMatchLines)
     }
     
     init(from decoder: Decoder) throws {
@@ -32,7 +32,7 @@ struct Regex: StringMatchable {
     }
     
     func match(_ string: String) -> Bool {
-        return self.regularExpression.matches(in: string, options: .anchored, range: NSRange(location: 0, length: string.characters.count)).count > 0
+        return regularExpression.matches(in: string, options: .anchored, range: NSRange(location: 0, length: string.characters.count)).count > 0
     }
 }
 
