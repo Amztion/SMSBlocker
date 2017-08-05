@@ -23,6 +23,8 @@
 		B366E2C81F2B7E0100D16A28 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B366E2C31F2B797D00D16A28 /* Protocol.swift */; };
 		B366E2CA1F2B7E0100D16A28 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EB838D1F2B080700534646 /* Constant.swift */; };
 		B37D3C981F2DB84D006264DE /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37D3C971F2DB84D006264DE /* Mock.swift */; };
+		B3D9718E1F3212CE0096BEF3 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EB838D1F2B080700534646 /* Constant.swift */; };
+		B3D971901F321A520096BEF3 /* RuleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D9718F1F321A520096BEF3 /* RuleTableViewCell.swift */; };
 		B3DD783A1EE80E95003F5023 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DD78391EE80E95003F5023 /* AppDelegate.swift */; };
 		B3DD783F1EE80E95003F5023 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3DD783D1EE80E95003F5023 /* Main.storyboard */; };
 		B3DD78411EE80E95003F5023 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3DD78401EE80E95003F5023 /* Assets.xcassets */; };
@@ -84,6 +86,7 @@
 		B366E2C31F2B797D00D16A28 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		B37D3C971F2DB84D006264DE /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
 		B3CAFAB51EE81BDC00C36B9D /* SMSBlocker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SMSBlocker.entitlements; sourceTree = "<group>"; };
+		B3D9718F1F321A520096BEF3 /* RuleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleTableViewCell.swift; sourceTree = "<group>"; };
 		B3DD78361EE80E95003F5023 /* SMSBlocker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMSBlocker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3DD78391EE80E95003F5023 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3DD783E1EE80E95003F5023 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -134,6 +137,7 @@
 		B338DD4B1F2B70D200AE363C /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				B3D9718F1F321A520096BEF3 /* RuleTableViewCell.swift */,
 				B338DD471F2B70B500AE363C /* RulesManageViewController.swift */,
 				B338DD491F2B70CB00AE363C /* RulesManageViewModel.swift */,
 			);
@@ -414,6 +418,7 @@
 				B338DD501F2B788300AE363C /* Regex.swift in Sources */,
 				B3DD783A1EE80E95003F5023 /* AppDelegate.swift in Sources */,
 				B366E2C41F2B797D00D16A28 /* Protocol.swift in Sources */,
+				B3D971901F321A520096BEF3 /* RuleTableViewCell.swift in Sources */,
 				B338DD531F2B78D200AE363C /* Keyword.swift in Sources */,
 				B338DD461F2B700A00AE363C /* RulesManager.swift in Sources */,
 				B338DD4A1F2B70CB00AE363C /* RulesManageViewModel.swift in Sources */,
@@ -425,6 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3DD784F1EE80E95003F5023 /* SMSBlockerTests.swift in Sources */,
+				B3D9718E1F3212CE0096BEF3 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RuleCell" rowHeight="60" id="aJG-3R-3KE">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RuleCell" rowHeight="60" id="aJG-3R-3KE" customClass="RuleTableViewCell" customModule="SMSBlocker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aJG-3R-3KE" id="D7V-h6-0Ch">
@@ -36,6 +36,9 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e64-tv-Q5N">
                                                     <rect key="frame" x="306" y="14.5" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="switchDidChanged:" destination="aJG-3R-3KE" eventType="valueChanged" id="bMc-T2-4bw"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -46,6 +49,10 @@
                                                 <constraint firstItem="e64-tv-Q5N" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="rrU-58-A5C" secondAttribute="trailing" constant="195" id="LOg-Wn-KKp"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="switch" destination="e64-tv-Q5N" id="rbO-jI-12A"/>
+                                            <outlet property="title" destination="rrU-58-A5C" id="igP-fd-ICw"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
