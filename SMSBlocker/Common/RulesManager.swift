@@ -74,6 +74,8 @@ fileprivate extension RulesManager {
     func loadRules() {
         whiteList = try! load(forKey: UserDefaultsKey.whiteListRules) ?? [Rule]()
         blackList = try! load(forKey: UserDefaultsKey.blackListRules) ?? [Rule]()
+        
+        print("Loaded Data, number of white list: \(whiteList.count), number of black list: \(blackList.count)")
     }
     
     func load(forKey key: String) throws -> [Rule]? {
