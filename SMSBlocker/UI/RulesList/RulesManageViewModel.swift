@@ -37,6 +37,19 @@ class RulesManageViewModel: NSObject {
         return RulesManager.shared.whiteList[index]
     }
     
+    func removeWhiteListRule(at index: Int) -> Rule? {
+        if let rule = whiteListRule(at: index) {
+            do {
+                try RulesManager.shared.remove(rule, from: .whiteList)
+            } catch {
+                print("Cannot find whiteList rule to remove at index: \(index)")
+                return nil
+            }
+        }
+        
+        return nil
+    }
+    
     func blackListRuleItem(at index: Int) -> RuleTableViewItem? {
         guard index < RulesManager.shared.blackList.count else {
             return nil
@@ -54,6 +67,15 @@ class RulesManageViewModel: NSObject {
     }
     
     func removeBlackListRule(at index: Int) -> Rule? {
+        if let rule = blackListRule(at: index) {
+            do {
+                try RulesManager.shared.remove(rule, from: .blackList)
+            } catch {
+                print("Cannot find blackList rule to remove at index: \(index)")
+                return nil
+            }
+        }
         
+        return nil
     }
 }

@@ -16,6 +16,7 @@
 		B338DD531F2B78D200AE363C /* Keyword.swift in Sources */ = {isa = PBXBuildFile; fileRef = B338DD521F2B78D200AE363C /* Keyword.swift */; };
 		B344AACD1EE80EE900F24099 /* MessageFilterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B344AACC1EE80EE900F24099 /* MessageFilterExtension.swift */; };
 		B344AAD11EE80EE900F24099 /* SMSFilter.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B344AACA1EE80EE900F24099 /* SMSFilter.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B35B3EFA1F36FC8300031456 /* RuleDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35B3EF91F36FC8300031456 /* RuleDetailTableViewController.swift */; };
 		B366E2C41F2B797D00D16A28 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B366E2C31F2B797D00D16A28 /* Protocol.swift */; };
 		B366E2C51F2B7DFE00D16A28 /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B338DD4D1F2B77FA00AE363C /* Rule.swift */; };
 		B366E2C61F2B7DFE00D16A28 /* Keyword.swift in Sources */ = {isa = PBXBuildFile; fileRef = B338DD521F2B78D200AE363C /* Keyword.swift */; };
@@ -83,6 +84,7 @@
 		B344AACA1EE80EE900F24099 /* SMSFilter.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SMSFilter.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		B344AACC1EE80EE900F24099 /* MessageFilterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageFilterExtension.swift; sourceTree = "<group>"; };
 		B344AACE1EE80EE900F24099 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B35B3EF91F36FC8300031456 /* RuleDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleDetailTableViewController.swift; sourceTree = "<group>"; };
 		B366E2C31F2B797D00D16A28 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		B37D3C971F2DB84D006264DE /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
 		B3CAFAB51EE81BDC00C36B9D /* SMSBlocker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SMSBlocker.entitlements; sourceTree = "<group>"; };
@@ -134,14 +136,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B338DD4B1F2B70D200AE363C /* UI */ = {
+		B338DD4B1F2B70D200AE363C /* RulesList */ = {
 			isa = PBXGroup;
 			children = (
 				B3D9718F1F321A520096BEF3 /* RuleTableViewCell.swift */,
 				B338DD471F2B70B500AE363C /* RulesManageViewController.swift */,
 				B338DD491F2B70CB00AE363C /* RulesManageViewModel.swift */,
 			);
-			path = UI;
+			path = RulesList;
 			sourceTree = "<group>";
 		};
 		B338DD4C1F2B70DE00AE363C /* Common */ = {
@@ -175,6 +177,23 @@
 			path = SMSFilter;
 			sourceTree = "<group>";
 		};
+		B35B3EF71F36FAFB00031456 /* RuleDetail */ = {
+			isa = PBXGroup;
+			children = (
+				B35B3EF91F36FC8300031456 /* RuleDetailTableViewController.swift */,
+			);
+			path = RuleDetail;
+			sourceTree = "<group>";
+		};
+		B35B3EF81F36FB0C00031456 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				B35B3EF71F36FAFB00031456 /* RuleDetail */,
+				B338DD4B1F2B70D200AE363C /* RulesList */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		B3DD782D1EE80E95003F5023 = {
 			isa = PBXGroup;
 			children = (
@@ -202,7 +221,7 @@
 			children = (
 				B3CAFAB51EE81BDC00C36B9D /* SMSBlocker.entitlements */,
 				B3DD78391EE80E95003F5023 /* AppDelegate.swift */,
-				B338DD4B1F2B70D200AE363C /* UI */,
+				B35B3EF81F36FB0C00031456 /* UI */,
 				B338DD4C1F2B70DE00AE363C /* Common */,
 				B338DD511F2B789000AE363C /* Model */,
 				B3DD783D1EE80E95003F5023 /* Main.storyboard */,
@@ -419,6 +438,7 @@
 				B3DD783A1EE80E95003F5023 /* AppDelegate.swift in Sources */,
 				B366E2C41F2B797D00D16A28 /* Protocol.swift in Sources */,
 				B3D971901F321A520096BEF3 /* RuleTableViewCell.swift in Sources */,
+				B35B3EFA1F36FC8300031456 /* RuleDetailTableViewController.swift in Sources */,
 				B338DD531F2B78D200AE363C /* Keyword.swift in Sources */,
 				B338DD461F2B700A00AE363C /* RulesManager.swift in Sources */,
 				B338DD4A1F2B70CB00AE363C /* RulesManageViewModel.swift in Sources */,
